@@ -1,0 +1,258 @@
+#ifndef BERENICE2_H_INCLUDED
+#define BERENICE2_H_INCLUDED
+
+#include <string.h>
+
+
+
+//structs que utilizamos:
+struct produto
+{
+    int codigo;
+    int estoque;
+    char nome[20];
+    float valor;
+
+};
+struct produto produtos[5] =
+{
+    {1, 0, "Pao de Forma", 7.50},
+    {2, 0, "Pao de Centeio", 8.69},
+    {3, 0, "Broa de Milho", 5.00},
+    {4, 0, "Sonho", 4.50},
+    {5, 0, "Tubaina", 3.25},
+};
+struct nota {
+    int item, quant;
+    float vUni, subtotal;
+    char nome[15];
+
+
+};
+//funções que utilizamos:
+
+void listaprod()
+{
+    printf("\t   Lista dos produtos:\n");
+    printf("Codigo\t\tEstoque\t\t\t Item\n");
+    for (int i = 0; i < 5; i++)
+    {
+        printf(" %d   \t \t  %d   \t \t \t %s   \n", produtos[i].codigo, produtos[i].estoque, produtos[i].nome);
+    }
+}
+
+void cadastro()
+{
+    int cod, quant;
+    listaprod();
+
+    for(cod = 0; cod < 5; cod++)
+    {
+        quant = -1;
+
+        while ( quant < 0 )
+        {
+            printf("\nDigite a quantidade desejada para o estoque do produto %s:\n", produtos[cod].nome);
+            scanf("%i", &quant);
+            getchar();
+            if ( quant < 0)
+                printf("Quantidade invalida \n");
+
+        }
+
+        produtos [cod].estoque = quant;
+        printf("O estoque foi atualizado com sucesso!\n");
+
+    }
+
+}
+
+  float venda()
+{
+    struct nota cupom[10];
+    int i = 0;
+    int venda, quantidade,  cont;
+    float totalsemdesc, valorp, ttotal;
+
+    listaprod();
+    while( cont != 1)
+    {
+
+        printf("Selecionar item:\n");
+        scanf("%i", &venda);
+        getchar();
+           if ( venda < 1 || venda > 5)
+        {
+            printf("Opcao invalida!\n");
+        }   else {
+
+         switch(venda)
+            {
+            case 1:
+                printf("\nVoce escolheu pao de forma.");
+                printf("\nValor = 7,50\n");
+                valorp = 7.50;
+                break;
+
+            case 2:
+                printf("\nVoce escolheu pao de centeio.");
+                printf("\nValor = 8,69\n");
+                valorp = 8.69;
+                break;
+
+            case 3:
+                printf("\nVoce escolheu broa de milho.");
+                printf("\nValor = 5,00\n");
+                valorp = 5.00;
+                break;
+
+            case 4:
+                printf ("\nVoce escolheu sonho.");
+                printf("\nValor = 4,50\n");
+                valorp = 4.50;
+                break;
+
+            case 5:
+                printf ("\nVoce escolheu tubaina.");
+                printf("\nValor = 3,25\n");
+                valorp = 3.25;
+                break;
+            default:
+                printf("\nOpcao invalida!\n");
+            }
+
+            printf ("\nDigite a quantidade desejada:\n");
+            scanf ("%i", &quantidade);
+            getchar ();
+
+        totalsemdesc = (quantidade * valorp);    // calculo da quantidade do produto
+        if (quantidade < 0 || quantidade > produtos[venda-1].estoque)
+        {
+            printf("\nQuantidade invalida!\n");
+        }
+        else{
+            cupom[i].item = i + 1;
+            sprintf(cupom [i].nome,produtos[venda-1].nome);// o primeiro e o destino (para onde vai) e o segundo e a origem (de onde veio)
+            cupom[i].vUni = produtos[venda -1].valor;
+            cupom[i].quant = quantidade;
+            cupom[i].subtotal = totalsemdesc;
+            ttotal += totalsemdesc;
+            printf ("\nO valor total e: R$%.2f \n\n", totalsemdesc);
+        }
+        }
+
+
+            printf("\nPara finalizar a venda pressione 1 ou selecionar outro item pressione 2.\n");
+            scanf("%i", &cont);
+            getchar();
+
+            i++;
+        }
+        system("cls");
+    printf("Item \t Nome do item \t Valor unit.  \t Quantidade \t Subtotal \n");
+    for ( int j = 0; j < i; j++){
+        printf(" %i \t %s \t %.2f \t\t %i \t %.2f \n", cupom[j].item, cupom [j].nome, cupom[j].vUni, cupom[j].quant, cupom[j].subtotal);
+
+    }
+    printf(" total %.2f \n\n", ttotal);
+    system("pause");
+        return ttotal;
+
+}
+
+
+
+void pagamento()
+{
+    float totalsemdesc = venda();
+    int pagamento, parcelas; // valorp = valor de cada item ; desconto = valor total com desconto ; valorParcela = valor por parcela ;
+    float desconto, valorParcela, juros, troco, valorRecebido;
+
+    printf ("Selecione uma forma de pagamento: \n 1 \t A vista \n 2 \t A prazo \n\n");
+    scanf ("%i", &pagamento);
+    getchar();
+
+    switch (pagamento)
+    {
+//******** PAGAMENTO A VISTA ********
+    case 1:
+        printf ("\n Voce escolheu o pagamento a vista. \n");
+
+        if ( totalsemdesc >0 && totalsemdesc <=50)
+        {
+            desconto = totalsemdesc*0.95;
+        } // 0,95 = 5%
+
+        else if (totalsemdesc > 50 && totalsemdesc < 100)
+        {
+            desconto = totalsemdesc*0.90;
+        } // 0,90 = 10%
+
+        else
+        {
+            desconto = totalsemdesc*0.82;
+        } // 0,82 = 18%
+
+        printf ("\n O total com desconto e: R$%.2f \n", desconto);
+        printf ("\n Valor recebido pelo cliente: \n");
+        scanf ("%f", &valorRecebido);
+        getchar ();
+
+        if (valorRecebido >= desconto)
+        {
+            troco = valorRecebido - desconto;
+            printf ("\n Troco: R$%.2f", troco);
+        }
+
+        else
+        {
+            printf ("Valor insuficiente!");
+        }
+        break;
+
+//******** PAGAMENTO A PRAZO *******
+
+    case 2:
+        printf ("\n Voce escolheu o pagamento a prazo. \n");
+        printf ("\n - 2 ou 3 parcelas - acrescimo de 5 porcento. \n");
+        printf ("\n - 4 parcelas ou mais - acrescimo de 8 porcento. \n");
+        printf ("\n Selecione a quantidade de parcelas: \n");
+        scanf ("%i", &parcelas);
+        getchar();
+
+        if (parcelas >= 2 && parcelas <= 3)
+        {
+            juros = totalsemdesc*1.05;
+        } // +5%
+
+        else if (parcelas >= 4)
+        {
+            juros = totalsemdesc*1.08;
+        } // +8%
+
+        else
+        {
+            printf ("\n Quantidade de parcelas invalida! \n");
+        } //para restringir parcela invalida
+
+        printf ("\n O numero de parcelas escolhidas foi  %i \n", parcelas);
+
+        valorParcela = juros / parcelas; //valor por parcela
+
+        printf ("\n Total por parcela %.2f \n", valorParcela);
+        printf ("\n Valor total com juros: %.2f \n", juros);
+        break; // fechando o case 2
+
+    default:
+        printf(" Esta opcao de pagamento nao existe! \n"); // fechando o switch
+
+    }
+
+
+
+}
+
+
+
+
+#endif // BERENICE2_H_INCLUDED
