@@ -1,9 +1,65 @@
-<mxfile host="app.diagrams.net" modified="2023-04-16T22:59:06.867Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" version="21.1.8" etag="5cp_hvkk1ow50SQaXgg8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-16T23:28:31.254Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="YY3QHDYfG06DGowiRyYm" version="21.1.8" type="github">
   <diagram name="Página-1" id="OIUwpwaMgwmhtbwfHeuS">
-    <mxGraphModel>
+    <mxGraphModel dx="880" dy="488" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6ZioNpx4KFucAL6pxvhm-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="201.5" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-1" value="Início" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6ZioNpx4KFucAL6pxvhm-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-8" value="Menu de&lt;br&gt;seleção" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="230" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6ZioNpx4KFucAL6pxvhm-14" target="6ZioNpx4KFucAL6pxvhm-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="250" />
+              <mxPoint x="540" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-14" value="&lt;br&gt;Selecione uma das opções" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-18" value="Sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6ZioNpx4KFucAL6pxvhm-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-15" value="1 -&lt;br&gt;Cadastrar&lt;br&gt;Estoque" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="50" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6ZioNpx4KFucAL6pxvhm-20" target="6ZioNpx4KFucAL6pxvhm-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-20" value="Estoque item 1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="690" y="60" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6ZioNpx4KFucAL6pxvhm-25" target="6ZioNpx4KFucAL6pxvhm-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-25" value="&lt;br&gt;Quant do item 1" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="840" y="60" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6ZioNpx4KFucAL6pxvhm-28" target="6ZioNpx4KFucAL6pxvhm-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-28" value="Estoque item 2" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="991" y="60" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6ZioNpx4KFucAL6pxvhm-29" value="&lt;br&gt;Quant do item 2" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1141" y="60" width="100" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
