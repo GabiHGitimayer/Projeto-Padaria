@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+#include"vendas.h"
+
+
+int main()
+{
+
+    int codigo;
+    while (codigo != 4){
+    printf("\t \tBEM VINDO AO MENU!\n");
+    printf("\t     Selecione uma das opcoes:\n\n");
+    printf("1-  Cadastrar estoque\t\t\n");
+    printf("2-  Visualizar estoque\t\t\n");
+    printf("3-  Realizar venda\t\t\n");
+    printf("4-  Sair\t\t\n");
+    printf("\nDigite o codigo para selecionar uma opcao: ");
+    scanf("%d", &codigo);
+    getchar();
+    system("cls");
+
+    switch(codigo)
+    {
+        case 1:
+            cadastro();
+            system("cls");
+            break;
+
+
+        case 2:
+            listaprod();
+            system("pause");
+            system("cls");
+            break;
+        case 3:
+            pagamento();
+            system("pause");
+            system("cls");
+            break;
+        case 4:
+            printf("Tenha uma boa noite! \n");
+            break;
+        default:
+            printf("Digite uma opcao valida! \n");
+            break;
+
+    }
+    }
+    return 0;
+}
